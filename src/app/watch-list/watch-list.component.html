@@ -1,0 +1,32 @@
+<div class="flex justify-center border-r-4 border-sky-100">
+  <div class="flex flex-col">
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+        <div class="overflow-hidden text-center">
+          WATCHLIST
+          <table class="min-w-full text-left text-sm font-light">
+            <thead class="border-b font-medium dark:border-neutral-500">
+              <tr>
+                <th scope="col" class="px-6 py-4">Name</th>
+                <th scope="col" class="px-6 py-4">Original Price</th>
+                <th scope="col" class="px-6 py-4">Proit/Loss</th>
+                <th scope="col" class="px-6 py-4">Current Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b dark:border-neutral-500" *ngFor="let stock of stocks"
+                [ngClass]="{'text-red-600': stock.TICKER_CHANGE < 0, 'text-green-600': stock.TICKER_CHANGE >= 0 }">
+
+                <td class="whitespace-nowrap px-6 py-4">{{stock.SC_NAME}}</td>
+                <td class="whitespace-nowrap px-6 py-4 text-gray-500">{{stock.LAST}}</td>
+                <td class="whitespace-nowrap px-6 py-4"> {{stock.TICKER_CHANGE}}
+                  ({{stock.TICKER_CHANGE_PERCENT}} %) </td>
+                <td class="whitespace-nowrap px-6 py-4">{{stock.CLOSE}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

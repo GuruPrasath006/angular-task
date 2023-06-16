@@ -1,0 +1,33 @@
+
+
+<div class="col-span-2 flex justify-center">
+  
+  <div class="flex flex-col">
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+        <div class="overflow-hidden text-center">
+          ALL STOCKS
+          <table class="min-w-full text-left text-sm font-light">
+            <thead class="border-b font-medium dark:border-neutral-500">
+              <tr>
+                <th scope="col" class="px-6 py-4">Code</th>
+                <th scope="col" class="px-6 py-4">Name</th>
+                <th scope="col" class="px-6 py-4">Open Price</th>
+                <th scope="col" class="px-6 py-4">Close Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b dark:border-neutral-500" *ngFor="let stock of stocks">
+                <td class="whitespace-nowrap px-6 py-4 font-medium">{{stock.SC_CODE}}</td>
+                <td class="whitespace-nowrap px-6 py-4">{{stock.SC_NAME}}</td>
+                <td class="whitespace-nowrap px-6 py-4">{{stock.OPEN}}</td>
+                <td class="whitespace-nowrap px-6 py-4">{{stock.CLOSE}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
